@@ -1,0 +1,57 @@
+---
+title: "Covid-related Hospitalisations"
+author: "Frank Moriarty and Ciaran Prendergast"
+date: "5/18/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Trend in Hospital Admissions
+
+
+Hospital admissions have fallen slowly after early peaks near April 1st. The percentage increase on total hospital admissions trended downwards throughout the crisis.
+
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(RCurl)
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+data1 <- read.csv(text = x)
+n <- nrow(data1)
+
+data1$newhosp[1] <- NA
+if (n > 1) for(i in 2:n) data1$newhosp[i] <- ( data1$cases_hosp[i] - data1$cases_hosp[i-1] )
+
+data1$newhosp_per[1] <- NA
+if (n > 1) for(i in 2:n) data1$newhosp_per[i] <- ( 100*(data1$cases_hosp[i] - data1$cases_hosp[i-1])/data1$cases_hosp[i-1] )
+
+newhosp <- as.numeric(data1$newhosp)
+newhosp_per <- as.numeric(data1$newhosp_per)
+
+dates <- as.factor(data1$date)                   #this calls the dates
+dates1 <- as.Date(dates, format= "%d-%b")
+df <- data.frame(newhosp_per,dates1,newhosp)
+
+ylim.prim <- c(0, 50)   
+ylim.sec <- c(0, 250)
+
+b <- diff(ylim.prim)/diff(ylim.sec)
+a <- b*(ylim.prim[1] - ylim.sec[1])
+
+plot <- ggplot(df, aes(dates1)) +
+  geom_col(aes(y=newhosp_per, color ="red")) +
+  geom_line(aes(y = a + newhosp*b, color = "blue")) +
+  scale_y_continuous("% Increase on Total", sec.axis = sec_axis(~ (. - a)/b, name = "Daily Admissions")) +
+  scale_x_date("Dates") +
+  ggtitle("Covid-related Hospital Admissions in Ireland")
+
+plot2 <- plot + scale_color_discrete(name = "", labels = c("Daily Admissions","% Increase on Total"))
+
+
+plot2 + theme(axis.text=element_text(size=12, face = "bold"),
+              axis.title=element_text(size=14,face="bold"), plot.title = element_text(size=16, face = "bold"))
+
+```

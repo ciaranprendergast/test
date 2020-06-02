@@ -1,0 +1,90 @@
+---
+title: "Infection Rate By County"
+author: "Frank Moriarty and Ciaran Prendergast"
+date: "5/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(RCurl)
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+newcases <- read.csv(text = x, stringsAsFactors=FALSE)
+
+h <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/counties_population_cso_2016.csv")
+cso <- read.csv(text = h, stringsAsFactors = FALSE)
+  
+n <- nrow(newcases)
+the.date <- newcases$date[n]
+
+
+
+```
+
+## Counties most affected
+
+As we can see in the map, **Dublin** and **Cavan** have suffered the highest relative proportion of cases, followed by Monaghan, Westmeath, Kildare and Wicklow. As of `r the.date` , it is mainly counties of the west that have been least affected
+
+
+
+```{r, include=TRUE, message=FALSE}
+
+library(sf)
+library(tidyverse)
+library(raster)
+library(dplyr)
+library(spData)
+library(tmap)    # for static and interactive maps
+
+
+
+
+
+library(csodata)
+
+shp <- cso_get_geo("ac")
+
+
+
+
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+newcases <- read.csv(text = x, stringsAsFactors=FALSE)
+
+
+n <- nrow(newcases)
+the.date <- newcases$date[n]
+
+
+counties_start <- grep("cases_carlow", colnames(newcases))
+counties_stop <- grep("cases_wicklow", colnames(newcases))
+
+counties <- tibble(newcases[which(newcases$date == the.date ), counties_start:counties_stop])
+
+
+counties <- data.frame(r1=names(counties), t(counties))
+colnames(counties)[2] <- "cases"
+colnames(counties)[1] <- "county_doh"
+counties$cases <- as.numeric(as.character(counties$cases))
+counties[,1] <- sub("cases_", "", counties[,1])
+counties$cases <- as.numeric(counties$cases)
+
+county_cases <- merge(cso, counties, by="county_doh")
+
+county_cases$cases_per_mil <- 1000000*county_cases$cases/county_cases$pop
+
+names(shp)[8] <- "county"
+shp$county[20]="Dun Laoghaire-Rathdown"
+county_cases$county[8]="Dun Laoghaire-Rathdown"
+
+merged_cases <- merge(shp, county_cases, by="county")
+
+tm_shape(merged_cases) + tm_fill(col="cases_per_mil", style = "pretty", title=c(paste("Cases per million", the.date))) + tm_borders() + tm_layout(asp = 1.28)
+
+                                 
+
+```   
+                
+

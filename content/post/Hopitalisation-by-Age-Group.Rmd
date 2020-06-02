@@ -1,0 +1,69 @@
+---
+title: "Hospitalisation by Age-Group"
+author: "Frank Moriarty and Ciaran Prendergast"
+date: "5/12/2020"
+output: html_document
+---
+## Who has been hospitalised?
+
+As we can see, those hospitalised have been predominantly in those age groups aged **65 years and over**, while younger age groups remain unlikely to be hospitalised if infected.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, echo=FALSE, message=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(RCurl)
+
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+data1 <- read.csv(text = x, stringsAsFactors=FALSE)
+
+
+age <- c(rep("0-5",2), rep("05-14",2),rep("15-24",2),rep("25-34",2),rep("35-44",2),rep("45-54",2),rep("55-64",2),rep("65-74",2),rep("75-84",2),rep("85+",2))
+hospital <- rep(c("Yes", "No"), 10)
+
+n <- nrow(data1)
+the.date <- data1$date[n]
+
+
+
+value <- as.numeric(c((data1$cases_below_1[which(data1$date == the.date )] + data1$cases_1_4[which(data1$date == the.date )]) -as.numeric((data1$hosp_under_5[which(data1$date == the.date )])), data1$hosp_under_5[which(data1$date == the.date )], (data1$cases_5_14[which(data1$date == the.date )]) - ((data1$hosp_5_14[which(data1$date == the.date )])),(data1$hosp_5_14[which(data1$date == the.date )]),
+                       (data1$cases_15_24[which(data1$date == the.date )]) - ((data1$hosp_15_24[which(data1$date == the.date )])),(data1$hosp_15_24[which(data1$date == the.date )]), (data1$cases_25_34[which(data1$date == the.date )]) - ((data1$hosp_25_34[which(data1$date == the.date )])),(data1$hosp_25_34[which(data1$date == the.date )]),
+                       (data1$cases_35_44[which(data1$date == the.date )]) - ((data1$hosp_35_44[which(data1$date == the.date )])),(data1$hosp_35_44[which(data1$date == the.date )]),
+                       (data1$cases_45_54[which(data1$date == the.date )]) - ((data1$hosp_45_54[which(data1$date == the.date )])),(data1$hosp_45_54[which(data1$date == the.date )]),
+                       (data1$cases_55_64[which(data1$date == the.date )]) - ((data1$hosp_55_64[which(data1$date == the.date )])),(data1$hosp_55_64[which(data1$date == the.date )]),
+                       (data1$cases_65_74[which(data1$date == the.date )]) - ((data1$hosp_65_74[which(data1$date == the.date )])),(data1$hosp_65_74[which(data1$date == the.date )]),(data1$cases_75_84[which(data1$date == the.date)])- ((data1$hosp_75_84[which(data1$date == the.date)])), data1$hosp_75_84[which(data1$date == the.date)]))
+
+value0 <- c(data1$cases_85_plus[which(data1$date == the.date)]- (data1$hosp_85_plus[which(data1$date == the.date)]), (data1$hosp_85_plus[which(data1$date == the.date)]))
+
+value1 <- c(value,value0)
+
+datas <- data.frame(age,hospital,value1)
+
+
+
+
+graph<- ggplot(datas, aes(fill= hospital, y=value1, x=age)) + geom_bar(position="stack", stat="identity") + scale_fill_manual(name="", breaks=c("No", "Yes"), labels=c("Hospitalised", "Not Hospitalised"), values=c("tomato4", "indianred1"))
+
+
+graph1 <- graph + ggtitle("Hospitalisation By Age") + theme(plot.title = element_text(hjust = 0.5,lineheight=.8, face="bold"))
+
+
+
+
+graph2 <- graph1 + scale_x_discrete(name="Age Group") + scale_y_continuous(name="Cumulative Total")
+
+
+graph3 <-graph2 + theme(axis.title.y =  element_text(face="bold"), axis.title.x = element_text(face="bold"), axis.text.x  = element_text(face = "bold"), axis.text.y = element_text(face="bold"))
+
+
+graph3 +theme(axis.text=element_text(size=10, face = "bold"),
+              axis.title=element_text(size=14,face="bold"), plot.title = element_text(size=16, face = "bold"))
+
+```
+
+```
+
+

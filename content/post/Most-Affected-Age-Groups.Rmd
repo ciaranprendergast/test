@@ -1,0 +1,103 @@
+---
+title: "Age-Groups Most Affected"
+author: "Frank Moriarty and Ciaran Prendergast"
+date: "5/11/2020"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+rm(list=ls())
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Breakdown of Ages Affected
+
+As we can see in the graph below, the most affected group has been the **Over 75s**, while people aged in their early 20s or younger remain the least likely to have contracted the virus. The disproportionatly fewer young people being affected scews the mean somewhat; as we can see when it is adjusted to include only people 15 years old or older.
+
+
+
+```{r message=FALSE, warning=FALSE, , include=TRUE}
+library(tidyverse)
+library(RCurl)
+
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+data1 <- read.csv(text = x, stringsAsFactors=FALSE)
+n <- nrow(data1)
+the.date <- data1$date[n]
+y <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/age_population_cso_2019.csv")
+age_population_cso <- read.csv(text = y, stringsAsFactors=FALSE)
+
+totalllcases <- as.numeric(data1$cases_cumul)
+age <- c("0-4","05-14","15-24","25-34","35-44","45-54","55-64","65-74", "75-84", "85+")
+
+
+cases <- as.numeric(c(data1$cases_below_1[which(data1$date == the.date )] + data1$cases_1_4[which(data1$date == the.date )],
+                      data1$cases_5_14[which(data1$date == the.date )],
+                      data1$cases_15_24[which(data1$date == the.date )],
+                      data1$cases_25_34[which(data1$date == the.date )],
+                      data1$cases_35_44[which(data1$date == the.date )],
+                      data1$cases_45_54[which(data1$date == the.date )],
+                      data1$cases_55_64[which(data1$date == the.date )],
+                      data1$cases_65_74[which(data1$date == the.date )], data1$cases_75_84[which(data1$date == the.date)], data1$cases_85_plus[which(data1$date == the.date)]))
+
+#the cases by age all as numeric
+
+popcso<- age_population_cso$pop_estimate[1:10]      #the population estimates  
+
+
+popcso.dividedbymillion <- popcso/1000000          #the population estimates divided by million as per formula in notebook
+
+
+
+cases1M <- cases/popcso.dividedbymillion         #this gives a string of the cases per one million by age
+
+df <- data.frame(age,cases1M)
+
+the.plot <- ggplot(data=df, aes(x= age, y=cases1M,fill="indianred4", color="indianred4")) + geom_bar(stat='identity') 
+
+
+
+
+total.cases <-totalllcases[which(data1$date == the.date )]  #this gives the total cases on the date
+
+totalpop.dividedby1m <- (age_population_cso$pop_estimate[which(age_population_cso$age_group=='cases_all_ages')])/1000000
+
+mean.cases1M<- as.numeric(total.cases)/as.numeric(totalpop.dividedby1m)   #this is population mean for average abline
+
+
+total.cases15plus <- totalllcases[which(data1$date == the.date )] -  ((data1$cases_below_1[which(data1$date == the.date )] + data1$cases_1_4[which(data1$date == the.date )]+               data1$cases_5_14[which(data1$date == the.date )])) #this gave the total amount of cases 15 plus
+
+pop15plus.dividedby1M <- (age_population_cso$pop_estimate[which(age_population_cso$age_group=='cases_age_15_plus')])/1000000    #this was the population 15 plus divided by 1 million as per formula in notebook
+
+mean.cases15plus1M <- total.cases15plus/pop15plus.dividedby1M  #this shows the total cases 15 plus per 1 million people
+
+
+
+
+plot2 <- the.plot + scale_color_manual(values="indianred4",guide=FALSE)+scale_fill_manual(values="indianred4", guide=FALSE)
+
+
+
+
+
+
+plot3 <- plot2 +geom_hline(aes(yintercept= mean.cases15plus1M, linetype = "Mean 15-plus"), colour= "green", size=1.25) +
+  geom_hline(aes(yintercept=mean.cases1M , linetype = "Mean Total Population"), colour= "yellow", size=1.25) +
+  scale_linetype_manual(name = "", values = c(2, 2), 
+                        guide = guide_legend(override.aes = list(color = c("green", "yellow"))))
+plot4 <- plot3 + labs(title= "Confirmed Covid Cases by Age",y= "Cases per Million", x = "Age-groups (Yr)")
+
+
+plot4 +theme(legend.key = element_rect(fill = "lightblue", color = NA), axis.text=element_text(size=8, face = "bold"),
+             axis.title=element_text(size=14,face="bold"), plot.title = element_text(size=16, face = "bold"))
+
+```
+
+
+
+
+
+```
+
