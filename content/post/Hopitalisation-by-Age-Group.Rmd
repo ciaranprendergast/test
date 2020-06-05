@@ -4,14 +4,20 @@ author: "Frank Moriarty and Ciaran Prendergast"
 date: "5/12/2020"
 output: html_document
 ---
-## Who has been hospitalised?
 
-As we can see, those hospitalised have been predominantly in those age groups aged **65 years and over**, while younger age groups remain unlikely to be hospitalised if infected.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-```
+library(RCurl)
 
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+data1 <- read.csv(text = x, stringsAsFactors=FALSE)
+n <- nrow(data1)
+the.date <- data1$date[n]
+```
+## Who has been hospitalised?
+
+As we can see, those hospitalised have been predominantly in those age groups aged **65 years and over**, while younger age groups remain unlikely to be hospitalised if infected. Updated as of `r the.date`.
 ```{r, echo=FALSE, message=FALSE}
 library(ggplot2)
 library(tidyverse)

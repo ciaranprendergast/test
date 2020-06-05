@@ -9,12 +9,18 @@ output: html_document
 ```{r setup, include=FALSE}
 rm(list=ls())
 knitr::opts_chunk$set(echo = FALSE)
+library(RCurl)
+
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+data1 <- read.csv(text = x, stringsAsFactors=FALSE)
+n <- nrow(data1)
+the.date <- data1$date[n]
 ```
 
 
 ## Breakdown of Ages Affected
 
-As we can see in the graph below, the most affected group has been the **Over 75s**, while people aged in their early 20s or younger remain the least likely to have contracted the virus. The disproportionatly fewer young people being affected scews the mean somewhat; as we can see when it is adjusted to include only people 15 years old or older.
+As we can see in the graph below, the most affected group has been the **Over 75s**, while people aged in their early 20s or younger remain the least likely to have contracted the virus. The disproportionatly fewer young people being affected scews the mean somewhat; as we can see when it is adjusted to include only people 15 years old or older. Updated as of `r the.date`.
 
 
 
@@ -99,5 +105,4 @@ plot4 +theme(legend.key = element_rect(fill = "lightblue", color = NA), axis.tex
 
 
 
-```
 

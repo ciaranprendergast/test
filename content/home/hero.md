@@ -43,7 +43,7 @@ hero_media = "FAVPNG.png"
   icon = "download"
   
 [cta_alt]
-  url = "https://zenodo.org/"
+  url = "https://doi.org/10.5281/zenodo.3721407"
   label = "View Documentation"
 
 # Note. An optional note to show underneath the links.

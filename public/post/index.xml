@@ -22,9 +22,8 @@
 
 &lt;div id=&#34;breakdown-of-ages-affected&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Breakdown of Ages Affected&lt;/h2&gt;
-&lt;p&gt;As we can see in the graph below, the most affected group has been the &lt;strong&gt;Over 75s&lt;/strong&gt;, while people aged in their early 20s or younger remain the least likely to have contracted the virus. The disproportionatly fewer young people being affected scews the mean somewhat; as we can see when it is adjusted to include only people 15 years old or older.&lt;/p&gt;
+&lt;p&gt;As we can see in the graph below, the most affected group has been the &lt;strong&gt;Over 75s&lt;/strong&gt;, while people aged in their early 20s or younger remain the least likely to have contracted the virus. The disproportionatly fewer young people being affected scews the mean somewhat; as we can see when it is adjusted to include only people 15 years old or older. Updated as of 01-Jun.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Most-Affected-Age-Groups_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;```&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -106,8 +105,8 @@
 
 &lt;div id=&#34;who-has-been-hospitalised&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Who has been hospitalised?&lt;/h2&gt;
-&lt;p&gt;As we can see, those hospitalised have been predominantly in those age groups aged &lt;strong&gt;65 years and over&lt;/strong&gt;, while younger age groups remain unlikely to be hospitalised if infected.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Hopitalisation-by-Age-Group_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;As we can see, those hospitalised have been predominantly in those age groups aged &lt;strong&gt;65 years and over&lt;/strong&gt;, while younger age groups remain unlikely to be hospitalised if infected. Updated as of 01-Jun.
+&lt;img src=&#34;/post/Hopitalisation-by-Age-Group_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;```&lt;/p&gt;
 &lt;/div&gt;
 </description>
