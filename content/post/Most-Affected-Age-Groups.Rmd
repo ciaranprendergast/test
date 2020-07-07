@@ -36,10 +36,10 @@ y <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/age
 age_population_cso <- read.csv(text = y, stringsAsFactors=FALSE)
 
 totalllcases <- as.numeric(data1$cases_cumul)
-age <- c("0-4","05-14","15-24","25-34","35-44","45-54","55-64","65-74", "75-84", "85+")
+age <- c("<5","05-14","15-24","25-34","35-44","45-54","55-64","65-74", "75-84", "85+")
 
 
-cases <- as.numeric(c(data1$cases_below_1[which(data1$date == the.date )] + data1$cases_1_4[which(data1$date == the.date )],
+cases <- as.numeric(c(data1$cases_under_5[which(data1$date == the.date )],
                       data1$cases_5_14[which(data1$date == the.date )],
                       data1$cases_15_24[which(data1$date == the.date )],
                       data1$cases_25_34[which(data1$date == the.date )],
