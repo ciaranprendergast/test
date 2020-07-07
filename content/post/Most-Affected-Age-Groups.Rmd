@@ -73,7 +73,7 @@ totalpop.dividedby1m <- (age_population_cso$pop_estimate[which(age_population_cs
 mean.cases1M<- as.numeric(total.cases)/as.numeric(totalpop.dividedby1m)   #this is population mean for average abline
 
 
-total.cases15plus <- totalllcases[which(data1$date == the.date )] -  ((data1$cases_below_1[which(data1$date == the.date )] + data1$cases_1_4[which(data1$date == the.date )]+               data1$cases_5_14[which(data1$date == the.date )])) #this gave the total amount of cases 15 plus
+total.cases15plus <- totalllcases[which(data1$date == the.date )] -  (data1$cases_under_5[which(data1$date == the.date )]+               data1$cases_5_14[which(data1$date == the.date )]) #this gave the total amount of cases 15 plus
 
 pop15plus.dividedby1M <- (age_population_cso$pop_estimate[which(age_population_cso$age_group=='cases_age_15_plus')])/1000000    #this was the population 15 plus divided by 1 million as per formula in notebook
 
