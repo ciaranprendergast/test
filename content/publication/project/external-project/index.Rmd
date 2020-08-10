@@ -1,0 +1,107 @@
+---
+date: 
+external_link: 
+image:
+  caption: Cases over in last 3 Weeks
+  focal_point: Smart
+summary: Cases by County last 3 Weeks.
+tags:
+- Demo
+title: Cases by County last 3 Weeks.
+---
+```{r setup, include=FALSE}
+
+rm(list=ls())
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(RCurl)
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+newcases <- read.csv(text = x, stringsAsFactors=FALSE)
+
+h <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/counties_population_cso_2016.csv")
+cso <- read.csv(text = h, stringsAsFactors = FALSE)
+  
+n <- nrow(newcases)
+the.date <- newcases$date[n]
+
+
+
+```
+
+## Counties most affected
+
+As we can see in the map, **Dublin** and **Cavan** have suffered the highest relative proportion of cases, followed by Monaghan, Westmeath, Kildare and Wicklow. As of `r the.date` , it is mainly counties of the west that have been least affected
+
+
+
+```{r, include=TRUE, message=FALSE}
+
+library(sf)
+library(tidyverse)
+library(raster)
+library(dplyr)
+library(spData)
+library(tmap)    # for static and interactive maps
+
+
+
+
+
+library(csodata)
+
+shp <- cso_get_geo("ac")
+
+
+
+
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+newcases <- read.csv(text = x, stringsAsFactors=FALSE)
+
+
+n <- nrow(newcases)
+
+newcases$date<- as.factor(newcases$date)
+newcases$date <- as.Date(newcases$date, format= "%d-%b")
+the.date <- newcases$date[n]
+
+
+counties_start <- grep("cases_carlow", colnames(newcases))
+counties_stop <- grep("cases_wicklow", colnames(newcases))
+
+#kept last 21 days
+counties <- tibble(newcases[which(newcases$date >= the.date - 21 ), counties_start:counties_stop])
+counties1 <- as.data.frame(counties)
+N<- nrow(counties1)
+#maybe no need to unlist : as.numeric(unlist(counties1))
+counties1<- sapply(counties1,as.numeric)
+counties2 <- counties1[N,] - counties1[N-20,]
+
+counties3 <- data.frame(t(counties2[]))
+#unused below
+#colnames(counties3) <- counties2[, 1]
+
+
+counties3 <- data.frame(r1=names(counties3), t(counties3))
+colnames(counties3)[2] <- "cases"
+colnames(counties3)[1] <- "county_doh"
+#counties3$cases <- as.numeric(as.character(counties3$cases))
+counties3[,1] <- sub("cases_", "", counties3[,1])
+#counties3$cases <- as.numeric(counties3$cases)
+
+county_cases <- merge(cso, counties3, by="county_doh")
+
+county_cases$cases_per_mil <- 1000000*county_cases$cases/county_cases$pop
+
+names(shp)[8] <- "county"
+shp$county[20]="Dun Laoghaire-Rathdown"
+county_cases$county[8]="Dun Laoghaire-Rathdown"
+
+merged_cases <- merge(shp, county_cases, by="county")
+
+tm_shape(merged_cases) + tm_fill(col="cases_per_mil", style = "pretty", title=c(paste("Cases per million", the.date))) + tm_borders() + tm_layout(asp = 1.28)
+
+                                 
+
+```   
+                
+
