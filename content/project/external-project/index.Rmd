@@ -9,15 +9,7 @@ tags:
 - Demo
 title: Cases by County last 2 Weeks.
 ---
-<br><br><br><br>
-
-Breaking down the data to the level of cases per county over the last 2 weeks allows us to observe the current infection hotspots nationwide in a manner which is obscured when viewing the total amount of cases per county.
-
-<br><br><br><br>
-
 ```{r setup, include=FALSE}
-
-rm(list=ls())
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(RCurl)
@@ -33,11 +25,11 @@ the.date <- newcases$date[n]
 
 
 ```
+<br><br><br><br>
 
-## Counties most affected
+Breaking down the data to the level of cases per county over the last 2 weeks allows us to observe the current infection hotspots nationwide in a manner which is obscured when viewing the total amount of cases per county. Updated as of `r the.date`.
 
-As we can see in the map, **Dublin** and **Cavan** have suffered the highest relative proportion of cases, followed by Monaghan, Westmeath, Kildare and Wicklow. As of `r the.date` , it is mainly counties of the west that have been least affected
-
+<br><br><br><br>
 
 
 ```{r, include=TRUE, message=FALSE}

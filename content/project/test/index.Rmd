@@ -10,10 +10,18 @@ tags:
 title: 5-day running average of Cases
 
 ---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(RCurl)
 
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+data1 <- read.csv(text = x, stringsAsFactors=FALSE)
+n <- nrow(data1)
+the.date <- data1$date[n]
+```
 <br><br><br><br> 
 
-The 5 day running average allows for a closer look at the current rate of infection and progress in the country.
+The 5 day running average allows for a closer look at the current rate of infection and progress in the country. Updated as of `r the.date`. 
 
 <br><br><br><br>
 

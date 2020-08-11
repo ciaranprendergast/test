@@ -7,16 +7,23 @@ summary: Cases by Age over last 2 Weeks
 title: Cases by Age over last 2 Weeks
 
 ---
-
-<br><br><br><br>
-
-Below we show the breakdown by age of the infected over the last 2 weeks. The distribution of cases is expected to shift younger as younger people remain more likely to attend public social spaces at this time.
-
-<br><br><br><br>
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(RCurl)
+
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+data1 <- read.csv(text = x, stringsAsFactors=FALSE)
+n <- nrow(data1)
+the.date <- data1$date[n]
 ```
+
+<br><br><br><br>
+
+Below we show the breakdown by age of the infected over the last 2 weeks. The distribution of cases is expected to shift younger as younger people remain more likely to attend public social spaces at this time. Updated as of `r the.date`.
+
+<br><br><br><br>
+
+
 
 ```{r, include=TRUE, message=FALSE, warning=FALSE}
 
