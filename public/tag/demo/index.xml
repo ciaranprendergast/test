@@ -21,7 +21,7 @@
 
 
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Breaking down the data to the level of cases per county over the last 2 weeks allows us to observe the current infection hotspots nationwide in a manner which is obscured when viewing the total amount of cases per county. Updated as of 7-Aug.&lt;/p&gt;
+&lt;p&gt;Breaking down the data to the level of cases per county over the last 2 weeks allows us to observe the current infection hotspots nationwide in a manner which is obscured when viewing the cumulative cases to date per county. Updated as of 7-Aug.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/project/external-project/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>

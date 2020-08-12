@@ -27,7 +27,7 @@ the.date <- newcases$date[n]
 ```
 <br><br><br><br>
 
-Breaking down the data to the level of cases per county over the last 2 weeks allows us to observe the current infection hotspots nationwide in a manner which is obscured when viewing the total amount of cases per county. Updated as of `r the.date`.
+Breaking down the data to the level of cases per county over the last 2 weeks allows us to observe the current infection hotspots nationwide in a manner which is obscured when viewing the cumulative cases to date per county. Updated as of `r the.date`.
 
 <br><br><br><br>
 
