@@ -14,46 +14,46 @@
     
     <item>
       <title>5-day running average of Cases</title>
-      <link>/project/test/</link>
+      <link>/project/5day.average/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/test/</guid>
+      <guid>/project/5day.average/</guid>
       <description>
 
 
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;The 5 day running average allows for a closer look at the current rate of infection and progress in the country. Updated as of 7-Aug. &lt;/p&gt;
+&lt;p&gt;The 5 day running average allows for a closer look at the current rate of infection and progress in the country. The red line shows how the 5 day running average of new cases per day has changed over the 14 days leading up to 7-Aug. We have overlaid the trend over the two weeks previous to this, shown as the dashed blue line.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/test/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/project/5day.average/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Cases by Age over last 2 Weeks</title>
-      <link>/project/internal-project/</link>
+      <link>/project/age/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/internal-project/</guid>
+      <guid>/project/age/</guid>
       <description>
 
 
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Below we show the breakdown by age of the infected over the last 2 weeks. The distribution of cases is expected to shift younger as younger people remain more likely to attend public social spaces at this time. Updated as of 7-Aug.&lt;/p&gt;
+&lt;p&gt;Below we show the breakdown by age of the infected over the last 2 weeks. The mean cases per million for the total population is shown as the yellow dashed line, as well as the mean excluding children (where incidence may be lower) as the green dashed line. Updated as of 7-Aug.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/internal-project/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/project/age/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Cases by County last 2 Weeks.</title>
-      <link>/project/external-project/</link>
+      <title>Cases by County last 2 Weeks</title>
+      <link>/project/counties/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/external-project/</guid>
+      <guid>/project/counties/</guid>
       <description>
 
 
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;Breaking down the data to the level of cases per county over the last 2 weeks allows us to observe the current infection hotspots nationwide in a manner which is obscured when viewing the cumulative cases to date per county. Updated as of 7-Aug.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/external-project/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/project/counties/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

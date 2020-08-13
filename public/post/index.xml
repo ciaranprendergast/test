@@ -106,8 +106,6 @@
 &lt;div id=&#34;who-has-been-hospitalised&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Who has been hospitalised?&lt;/h2&gt;
 &lt;p&gt;As we can see, those hospitalised have been predominantly in those age groups aged &lt;strong&gt;65 years and over&lt;/strong&gt;, while younger age groups remain unlikely to be hospitalised if infected. Updated as of 7-Aug.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;ggplot2&amp;#39; was built under R version 4.0.2&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;stringr&amp;#39; was built under R version 4.0.2&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 1 rows containing missing values (position_stack).&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Hopitalisation-by-Age-Group_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;```&lt;/p&gt;

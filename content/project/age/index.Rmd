@@ -19,7 +19,7 @@ the.date <- data1$date[n]
 
 <br><br><br><br>
 
-Below we show the breakdown by age of the infected over the last 2 weeks. The distribution of cases is expected to shift younger as younger people remain more likely to attend public social spaces at this time. Updated as of `r the.date`.
+Below we show the breakdown by age of the infected over the last 2 weeks. The mean cases per million for the total population is shown as the yellow dashed line, as well as the mean excluding children (where incidence may be lower) as the green dashed line. Updated as of `r the.date`.
 
 <br><br><br><br>
 

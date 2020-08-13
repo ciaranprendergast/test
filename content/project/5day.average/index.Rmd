@@ -6,7 +6,7 @@ image:
   focal_point: Smart
 summary: 5-day running average of Cases
 tags:
--  5-day running average of Cases
+
 title: 5-day running average of Cases
 
 ---
@@ -21,7 +21,7 @@ the.date <- data1$date[n]
 ```
 <br><br><br><br> 
 
-The 5 day running average allows for a closer look at the current rate of infection and progress in the country. Updated as of `r the.date`. 
+The 5 day running average allows for a closer look at the current rate of infection and progress in the country. The red line shows how the 5 day running average of new cases per day has changed over the 14 days leading up to `r the.date`. We have overlaid the trend over the two weeks previous to this, shown as the dashed blue line. 
 
 <br><br><br><br>
 
@@ -56,7 +56,6 @@ plot <- ggplot (data1[(n-14):n,], aes(x=date_f)) +
   scale_color_manual(values = c("blue","red"), name = "", labels = c("Previous Fortnight", "Last Fortnight")) +
   scale_x_date("Date",breaks = pretty_breaks(10))+
   scale_y_continuous("New daily cases (5-day average)")+
-  ggtitle("Title")+
   theme(legend.key = element_rect(fill = "lightblue", color = NA), axis.text=element_text(size=10, face = "bold"),
         axis.title=element_text(size=14,face="bold"), plot.title = element_text(size=16, face = "bold")) +
   scale_linetype(guide=FALSE) +
