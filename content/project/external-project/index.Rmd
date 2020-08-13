@@ -2,12 +2,11 @@
 date: 
 external_link: 
 image:
-  caption: Cases over in last 2 Weeks
+  caption: Cases over last 2 Weeks
   focal_point: Smart
-summary: Cases by County last 2 Weeks.
+summary: Cases by County last 2 Weeks
 tags:
-- Demo
-title: Cases by County last 2 Weeks.
+title: Cases by County last 2 Weeks
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
