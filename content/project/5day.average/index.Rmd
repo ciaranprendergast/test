@@ -12,12 +12,15 @@ title: 5-day running average of Cases
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-library(RCurl)
+rm(list=ls())
+data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
 
-x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
-data1 <- read.csv(text = x, stringsAsFactors=FALSE)
 n <- nrow(data1)
-the.date <- data1$date[n]
+
+data1$Date <- as.character(data1$Date)
+data1$Date <- substr(data1$Date, 1, 10)
+data1$Date <- as.Date(data1$Date, "%Y/%m/%d")
+the.date <- data1$Date[n]
 ```
 <br><br><br><br> 
 
@@ -26,31 +29,34 @@ The 5 day running average allows for a closer look at the current rate of infect
 <br><br><br><br>
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE, include=TRUE}
+rm(list=ls())
+data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
 
-library(RCurl)
-
-library(zoo)
-
-library(ggplot2)
-library(lubridate)
-
-library(scales)
-x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
-data1 <- read.csv(text = x)
 n <- nrow(data1)
 
+data1$Date <- as.character(data1$Date)
+data1$Date <- substr(data1$Date, 1, 10)
+data1$Date <- as.Date(data1$Date, "%Y/%m/%d")
+the.date <- data1$Date[n]
+library(tidyverse)
+library(zoo)
+library(ggplot2)
+library(lubridate)
+library(scales)
+
 data1$newcases[1] <- NA
-if (n > 1) for(i in 2:n) data1$newcases[i] <- ( data1$cases_cumul[i] - data1$cases_cumul[i-1] )
+if (n > 1) for(i in 2:n) data1$newcases[i] <- ( data1$TotalConfirmedCovidCases[i] - data1$TotalConfirmedCovidCases[i-1] )
 
-data1$date_f <- as.Date(data1$date, format= "%d-%b")
+#gives rolling mean over 5 days
+data1$cases_5d <- rollmeanr(data1$newcases, 5, fill=NA)
 
-data1$cases_5d <- rollmeanr(data1$newcases, 5, fill=NA) 
 data1$cases_5d_off[1] <- NA
 if (n > 15) for(i in 16:n) data1$cases_5d_off[i] <- data1$cases_5d[i-15]
 
 
 
-plot <- ggplot (data1[(n-14):n,], aes(x=date_f)) + 
+
+plot <- ggplot (data1[(n-14):n,], aes(x=Date)) + 
   geom_line(aes(y=cases_5d, color = "red"),size=1.2) +
   geom_line(aes(y=cases_5d_off, color="blue"),size=1,linetype = "dashed") +
   scale_color_manual(values = c("blue","red"), name = "", labels = c("Previous Fortnight", "Last Fortnight")) +
@@ -64,6 +70,7 @@ plot <- ggplot (data1[(n-14):n,], aes(x=date_f)) +
   
 
 plot
+
 
 ```
 

@@ -9,12 +9,19 @@ user_groups:
 - Visitors
 ---
 ```{r setup, include= FALSE}
-library(RCurl)
-x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
-newcases <- read.csv(text = x, stringsAsFactors=FALSE)
 
-  n <- nrow(newcases)
-the.date <- newcases$date[n]
+newcases<- 
+read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
+
+n <- nrow(newcases)
+
+newcases$Date <- as.character(newcases$Date)
+newcases$Date <- substr(newcases$Date, 1, 10)
+newcases$Date <- as.Date(newcases$Date, "%Y/%m/%d")
+
+the.date <- newcases$Date[n]
+
+  
 
 ```
 

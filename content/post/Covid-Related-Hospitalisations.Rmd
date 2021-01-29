@@ -16,24 +16,26 @@ Hospital admissions have fallen slowly after early peaks near April 1st. The per
 
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE}
-library(tidyverse)
-library(RCurl)
-x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
-data1 <- read.csv(text = x)
+rm(list=ls())
+data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
+
 n <- nrow(data1)
 
+data1$Date <- as.character(data1$Date)
+data1$Date <- substr(data1$Date, 1, 10)
+data1$Date <- as.Date(data1$Date, "%Y/%m/%d")
+the.date <- data1$Date[n]
+
 data1$newhosp[1] <- NA
-if (n > 1) for(i in 2:n) data1$newhosp[i] <- ( data1$cases_hosp[i] - data1$cases_hosp[i-1] )
+if (n > 1) for(i in 2:n) data1$newhosp[i] <- ( data1$HospitalisedCovidCases[i] - data1$HospitalisedCovidCases[i-1] )
 
 data1$newhosp_per[1] <- NA
-if (n > 1) for(i in 2:n) data1$newhosp_per[i] <- ( 100*(data1$cases_hosp[i] - data1$cases_hosp[i-1])/data1$cases_hosp[i-1] )
+if (n > 1) for(i in 2:n) data1$newhosp_per[i] <- ( 100*(data1$HospitalisedCovidCases[i] - data1$HospitalisedCovidCases[i-1])/data1$HospitalisedCovidCases[i-1] )
 
 newhosp <- as.numeric(data1$newhosp)
 newhosp_per <- as.numeric(data1$newhosp_per)
 
-dates <- as.factor(data1$date)                   #this calls the dates
-dates1 <- as.Date(dates, format= "%d-%b")
-df <- data.frame(newhosp_per,dates1,newhosp)
+df <- data.frame(newhosp_per,data1$Date,newhosp)
 
 ylim.prim <- c(0, 50)   
 ylim.sec <- c(0, 250)
@@ -41,7 +43,9 @@ ylim.sec <- c(0, 250)
 b <- diff(ylim.prim)/diff(ylim.sec)
 a <- b*(ylim.prim[1] - ylim.sec[1])
 
-plot <- ggplot(df, aes(dates1)) +
+
+library(ggplot2)
+plot <- ggplot(df, aes(data1.Date)) +
   geom_col(aes(y=newhosp_per, color ="red")) +
   geom_line(aes(y = a + newhosp*b, color = "blue")) +
   scale_y_continuous("% Increase on Total", sec.axis = sec_axis(~ (. - a)/b, name = "Daily Admissions")) +
@@ -53,5 +57,7 @@ plot2 <- plot + scale_color_discrete(name = "", labels = c("Daily Admissions","%
 
 plot2 + theme(axis.text=element_text(size=12, face = "bold"),
               axis.title=element_text(size=14,face="bold"), plot.title = element_text(size=16, face = "bold"))
+
+
 
 ```
