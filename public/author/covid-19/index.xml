@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Covid-19 | Covid-19 Pandemic in Ireland</title>
+    <link>/author/covid-19/</link>
+      <atom:link href="/author/covid-19/index.xml" rel="self" type="application/rss+xml" />
+    <description>Covid-19</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>/author/covid-19/avatar_hub63d2297d1471ada68c98fca417eec0f_701126_270x270_fill_lanczos_center_2.png</url>
+      <title>Covid-19</title>
+      <link>/author/covid-19/</link>
+    </image>
+    
+  </channel>
+</rss>

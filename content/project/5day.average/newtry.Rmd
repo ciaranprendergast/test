@@ -1,0 +1,58 @@
+---
+title: "5 days running average"
+author: "Frank Moriarty and Ciaran Prendergast"
+date: "5/18/2020"
+output: html_document
+image:
+  caption: Photo by rawpixel on Unsplash
+  focal_point: Smart
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r pressure, echo= FALSE, message=FALSE, warning=FALSE}
+
+data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
+
+n <- nrow(data1)
+
+data1$Date <- as.character(data1$Date)
+data1$Date <- substr(data1$Date, 1, 10)
+data1$Date <- as.Date(data1$Date, "%Y/%m/%d")
+the.date <- data1$Date[n]
+
+library(zoo)
+library(ggplot2)
+library(lubridate)
+library(scales)
+
+data1$newcases[1] <- NA
+if (n > 1) for(i in 2:n) data1$newcases[i] <- ( data1$TotalConfirmedCovidCases[i] - data1$TotalConfirmedCovidCases[i-1] )
+
+#gives rolling mean over 5 days
+data1$cases_5d <- rollmeanr(data1$newcases, 5, fill=NA)
+
+data1$cases_5d_off[1] <- NA
+if (n > 15) for(i in 16:n) data1$cases_5d_off[i] <- data1$cases_5d[i-15]
+
+
+
+
+plot <- ggplot (data1[(n-14):n,], aes(x=Date)) + 
+  geom_line(aes(y=cases_5d, color = "red"),size=1.2) +
+  geom_line(aes(y=cases_5d_off, color="blue"),size=1,linetype = "dashed") +
+  scale_color_manual(values = c("blue","red"), name = "", labels = c("Previous Fortnight", "Last Fortnight")) +
+  scale_x_date("Date",breaks = pretty_breaks(10))+
+  scale_y_continuous("New daily cases (5-day average)")+
+  theme(legend.key = element_rect(fill = "lightblue", color = NA), axis.text=element_text(size=10, face = "bold"),
+        axis.title=element_text(size=14,face="bold"), plot.title = element_text(size=16, face = "bold")) +
+  scale_linetype(guide=FALSE) +
+  scale_size(guide=FALSE)+
+  guides(fill = guide_legend(reverse = TRUE))
+  
+
+plot
+
+```

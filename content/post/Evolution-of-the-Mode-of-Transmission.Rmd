@@ -1,0 +1,53 @@
+---
+title: "Evolution-of-the-Mode-of-Transmission"
+author: "Frank Moriarty and Ciaran Prendergast"
+date: "5/18/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Evolution of the Mode of Transmission
+
+As travel restricions came into place the primary mode of infection has moved away from travel to infected regions and it became far more common to catch the virus through close contact with an infected person, such as a family-member; or through [Community Transmission](https://en.wikipedia.org/wiki/Transmission_(medicine)). 
+
+```{r, include=TRUE, message=FALSE, warning=FALSE}
+rm(list=ls())
+data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
+
+n <- nrow(data1)
+
+data1$Date <- as.character(data1$Date)
+data1$Date <- substr(data1$Date, 1, 10)
+data1$Date <- as.Date(data1$Date, "%Y/%m/%d")
+the.date <- data1$Date[n]
+
+library(ggplot2)
+library(scales)
+library(tidyverse)
+
+dataf <- data.frame(data1$Date,data1$CommunityTransmission,data1$CloseContact,data1$TravelAbroad)
+
+
+plot <- ggplot(dataf, aes(data1.Date, data1.CommunityTransmission)) +
+  geom_line(aes(color="tomato4")) +
+  geom_line(aes(y = data1.CloseContact, color = "blue"))+
+  geom_line(aes(y = data1$TravelAbroad, color = "green"))+
+  xlab("Date")+ ylab("Percentage of Cases")
+  
+
+  
+
+plot2 <- plot + labs(title = "Evolution of the Mode of Transmission")
+ 
+
+plot3<- plot2 + scale_color_discrete(name = "", labels = c("Community Transmission","Travel-Related","Close Contact"))
+
+
+plot3 + theme(axis.text=element_text(size=12, face = "bold"),axis.title=element_text(size=14,face="bold"),plot.title= element_text(size=16, face="bold"))
+```
+<a href="#top">Back to top</a>
+<br><br><br><br>
+

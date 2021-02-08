@@ -1,0 +1,82 @@
+---
+title: "Covid-Progression-over-Time"
+author: "Frank Moriarty and Ciaran Prendergast"
+date: "5/18/2020"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+rm(list=ls())
+knitr::opts_chunk$set(echo=FALSE)
+rm(list=ls())
+data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
+
+n <- nrow(data1)
+
+data1$Date <- as.character(data1$Date)
+data1$Date <- substr(data1$Date, 1, 10)
+data1$Date <- as.Date(data1$Date, "%Y/%m/%d")
+the.date <- data1$Date[n]
+
+```
+ 
+
+## Progression of the Virus
+
+As we can see here, the number of diagnosed Covid-19 cases in Ireland has grown exponentially, reaching **`r data1$cases_cumul[which(data1$date == the.date)]`** on `r the.date`. On the brightside, however, we can see that the rate of infection has fallen drastically; as the impact of *social distancing* translates into each infected person infecting fewer and fewer other people.
+
+
+```{r Covid Progression, include=TRUE, message=FALSE, warning=FALSE}
+
+rm(list=ls())
+library(tidyverse)
+data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
+
+n <- nrow(data1)
+
+data1$Date <- as.character(data1$Date)
+data1$Date <- substr(data1$Date, 1, 10)
+data1$Date <- as.Date(data1$Date, "%Y/%m/%d")
+
+the.date <- data1$Date[n]
+
+total_cases <- as.numeric(data1$TotalConfirmedCovidCases)
+
+data1$newcases[1] <- NA
+if (n > 1) for(i in 2:n) data1$newcases[i] <- ( total_cases[i] - total_cases[i-1] )
+
+data1$newcases_per[1] <- NA
+if (n > 1) for(i in 2:n) data1$newcases_per[i] <- ( 100*(total_cases[i] - total_cases[i-1])/total_cases[i-1] )
+
+
+df <- data.frame(data1$newcases_per,data1$Date,total_cases)
+
+
+
+ylim.prim <- c(0, 60)   
+ylim.sec <- c(0, 18000)  
+
+b <- diff(ylim.prim)/diff(ylim.sec)
+a <- b*(ylim.prim[1] - ylim.sec[1])
+
+plot <- ggplot(df, aes(data1.Date)) +
+  geom_col(aes(y = data1.newcases_per, color="tomoto4")) +
+  geom_line(aes(y = a + total_cases*b, color="darkblue")) +
+  scale_y_continuous("% Increase on Total", sec.axis = sec_axis(~ (. - a)/b, name = "Total Cases")) +
+  scale_x_date("Dates") +
+  ggtitle("Progression of Covid-19 in Ireland") 
+
+
+plot2 <- plot + scale_color_discrete(name = "", labels = c("Total Cases", "% Increase on Total") )
+
+
+plot2 + theme(legend.key = element_rect(fill = "lightblue", color = NA), axis.text=element_text(size=12, face = "bold"),
+              axis.title=element_text(size=14,face="bold"), plot.title = element_text(size=16, face = "bold"))
+
+
+
+
+```
+
+

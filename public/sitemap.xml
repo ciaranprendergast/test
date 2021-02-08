@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/courses/example/example1/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/courses/example/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/courses/example/example2/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/courses/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/slides/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/slides/example/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/5day.average/newtry/</loc>
+  </url>
+  
+  <url>
+    <loc>/tag/5-day-running-average-of-cases/</loc>
+  </url>
+  
+  <url>
+    <loc>/publication/project/test/</loc>
+  </url>
+  
+  <url>
+    <loc>/post/most-affected-age-groups/</loc>
+  </url>
+  
+  <url>
+    <loc>/project/age/age.hosp.2/</loc>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+  </url>
+  
+  <url>
+    <loc>/publication/project/external-project/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>/project/counties/county/</loc>
+  </url>
+  
+  <url>
+    <loc>/author/covid-19/</loc>
+  </url>
+  
+  <url>
+    <loc>/post/covid-related-icu-admissions/</loc>
+  </url>
+  
+  <url>
+    <loc>/tag/demo/</loc>
+  </url>
+  
+  <url>
+    <loc>/post/evolution-of-the-mode-of-transmission/</loc>
+  </url>
+  
+  <url>
+    <loc>/post/hopitalisation-by-age-group/</loc>
+  </url>
+  
+  <url>
+    <loc>/tag/hospitalised-in-last-3-weeks/</loc>
+  </url>
+  
+  <url>
+    <loc>/publication/project/internal-project/</loc>
+  </url>
+  
+  <url>
+    <loc>/post/infection-rate-by-county/</loc>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+  </url>
+  
+  <url>
+    <loc>/project/</loc>
+  </url>
+  
+  <url>
+    <loc>/publication_types/</loc>
+  </url>
+  
+  <url>
+    <loc>/publication/</loc>
+  </url>
+  
+  <url>
+    <loc>/talk/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc>
+  </url>
+  
+</urlset>
