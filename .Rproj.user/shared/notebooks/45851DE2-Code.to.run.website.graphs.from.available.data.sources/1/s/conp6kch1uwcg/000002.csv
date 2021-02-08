@@ -1,0 +1,46 @@
+"0","```r
+rm(list=ls())
+data1 <- read.csv(\"https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D\")
+
+n <- nrow(data1)
+
+data1$Date <- as.character(data1$Date)
+data1$Date <- substr(data1$Date, 1, 10)
+data1$Date <- as.Date(data1$Date, \"%Y/%m/%d\")
+the.date <- data1$Date[n]
+
+data1$newhosp[1] <- NA
+if (n > 1) for(i in 2:n) data1$newhosp[i] <- ( data1$HospitalisedCovidCases[i] - data1$HospitalisedCovidCases[i-1] )
+
+data1$newhosp_per[1] <- NA
+if (n > 1) for(i in 2:n) data1$newhosp_per[i] <- ( 100*(data1$HospitalisedCovidCases[i] - data1$HospitalisedCovidCases[i-1])/data1$HospitalisedCovidCases[i-1] )
+
+newhosp <- as.numeric(data1$newhosp)
+newhosp_per <- as.numeric(data1$newhosp_per)
+
+df <- data.frame(newhosp_per,data1$Date,newhosp)
+
+ylim.prim <- c(0, 50)   
+ylim.sec <- c(0, 250)
+
+b <- diff(ylim.prim)/diff(ylim.sec)
+a <- b*(ylim.prim[1] - ylim.sec[1])
+
+
+library(ggplot2)
+plot <- ggplot(df, aes(data1.Date)) +
+  geom_col(aes(y=newhosp_per, color =\"red\")) +
+  geom_line(aes(y = a + newhosp*b, color = \"blue\")) +
+  scale_y_continuous(\"% Increase on Total\", sec.axis = sec_axis(~ (. - a)/b, name = \"Daily Admissions\")) +
+  scale_x_date(\"Dates\") +
+  ggtitle(\"Covid-related Hospital Admissions in Ireland\")
+
+plot2 <- plot + scale_color_discrete(name = \"\", labels = c(\"Daily Admissions\",\"% Increase on Total\"))
+
+
+plot2 + theme(axis.text=element_text(size=12, face = \"bold\"),
+              axis.title=element_text(size=14,face=\"bold\"), plot.title = element_text(size=16, face = \"bold\"))
+
+
+
+```"
