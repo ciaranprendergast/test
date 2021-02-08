@@ -9,53 +9,48 @@ output: html_document
 ```{r setup, include=FALSE}
 rm(list=ls())
 knitr::opts_chunk$set(echo = FALSE)
+library(RCurl)
 
-data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
-
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+data1 <- read.csv(text = x, stringsAsFactors=FALSE)
 n <- nrow(data1)
-
-data1$Date <- as.character(data1$Date)
-data1$Date <- substr(data1$Date, 1, 10)
-data1$Date <- as.Date(data1$Date, "%Y/%m/%d")
-the.date <- data1$Date[n]
+the.date <- data1$date[n]
 ```
 
 
 ## Breakdown of Ages Affected
 
-As we can see in the graph below, the most affected group has been the **Over 65s**, while people aged in their early 20s or younger remain the least likely to have contracted the virus. The disproportionatly fewer young people being affected scews the mean somewhat; as we can see when it is adjusted to include only people 15 years old or older. Updated as of `r the.date`.
+As we can see in the graph below, the most affected group has been the **Over 75s**, while people aged in their early 20s or younger remain the least likely to have contracted the virus. The disproportionatly fewer young people being affected scews the mean somewhat; as we can see when it is adjusted to include only people 15 years old or older. Updated as of `r the.date`.
 
 
 
 ```{r message=FALSE, warning=FALSE, , include=TRUE}
-rm(list=ls())
-
 library(tidyverse)
-library(ggplot2)
-data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
+library(RCurl)
 
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+data1 <- read.csv(text = x, stringsAsFactors=FALSE)
 n <- nrow(data1)
-the.date <- data1$Date[n]
-age_population_cso <- read.csv("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/age_population_cso_2019.csv")
+the.date <- data1$date[n]
+y <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/age_population_cso_2019.csv")
+age_population_cso <- read.csv(text = y, stringsAsFactors=FALSE)
+
+totalllcases <- as.numeric(data1$cases_cumul)
+age <- c("<5","05-14","15-24","25-34","35-44","45-54","55-64","65-74", "75-84", "85+")
 
 
-totalllcases <- as.numeric(data1$TotalConfirmedCovidCases)
-age <- c("0-4","05-14","15-24","25-34","35-44","45-54","55-64","65+")
-
-
-cases <- as.numeric(c(data1$Aged1to4[which(data1$Date == the.date )],
-                      data1$Aged5to14[which(data1$Date == the.date )],
-                      data1$Aged15to24[which(data1$Date == the.date )],
-                      data1$Aged25to34[which(data1$Date == the.date )],
-                      data1$Aged35to44[which(data1$Date == the.date )],
-                      data1$Aged45to54[which(data1$Date == the.date )],
-                      data1$Aged55to64[which(data1$Date == the.date )],
-                      data1$Aged65up[which(data1$Date == the.date )]))
+cases <- as.numeric(c(data1$cases_under_5[which(data1$date == the.date )],
+                      data1$cases_5_14[which(data1$date == the.date )],
+                      data1$cases_15_24[which(data1$date == the.date )],
+                      data1$cases_25_34[which(data1$date == the.date )],
+                      data1$cases_35_44[which(data1$date == the.date )],
+                      data1$cases_45_54[which(data1$date == the.date )],
+                      data1$cases_55_64[which(data1$date == the.date )],
+                      data1$cases_65_74[which(data1$date == the.date )], data1$cases_75_84[which(data1$date == the.date)], data1$cases_85_plus[which(data1$date == the.date)]))
 
 #the cases by age all as numeric
 
-
-popcso<- age_population_cso$pop_estimate[c(1:7,11)]      #the population estimates  
+popcso<- age_population_cso$pop_estimate[1:10]      #the population estimates  
 
 
 popcso.dividedbymillion <- popcso/1000000          #the population estimates divided by million as per formula in notebook
@@ -71,18 +66,19 @@ the.plot <- ggplot(data=df, aes(x= age, y=cases1M,fill="indianred4", color="indi
 
 
 
-total.cases <-totalllcases[which(data1$Date == the.date )]  #this gives the total cases on the date
+total.cases <-totalllcases[which(data1$date == the.date )]  #this gives the total cases on the date
 
 totalpop.dividedby1m <- (age_population_cso$pop_estimate[which(age_population_cso$age_group=='cases_all_ages')])/1000000
 
 mean.cases1M<- as.numeric(total.cases)/as.numeric(totalpop.dividedby1m)   #this is population mean for average abline
 
 
-total.cases15plus <- totalllcases[which(data1$Date == the.date )] -  (( data1$Aged1to4[which(data1$Date == the.date )]+               data1$Aged5to14[which(data1$Date == the.date )])) #this gave the total amount of cases 15 plus
+total.cases15plus <- totalllcases[which(data1$date == the.date )] -  (data1$cases_under_5[which(data1$date == the.date )]+               data1$cases_5_14[which(data1$date == the.date )]) #this gave the total amount of cases 15 plus
 
 pop15plus.dividedby1M <- (age_population_cso$pop_estimate[which(age_population_cso$age_group=='cases_age_15_plus')])/1000000    #this was the population 15 plus divided by 1 million as per formula in notebook
 
 mean.cases15plus1M <- total.cases15plus/pop15plus.dividedby1M  #this shows the total cases 15 plus per 1 million people
+
 
 
 
@@ -99,9 +95,9 @@ plot3 <- plot2 +geom_hline(aes(yintercept= mean.cases15plus1M, linetype = "Mean 
                         guide = guide_legend(override.aes = list(color = c("green", "yellow"))))
 plot4 <- plot3 + labs(title= "Confirmed Covid Cases by Age",y= "Cases per Million", x = "Age-groups (Yr)")
 
+
 plot4 +theme(legend.key = element_rect(fill = "lightblue", color = NA), axis.text=element_text(size=8, face = "bold"),
              axis.title=element_text(size=14,face="bold"), plot.title = element_text(size=16, face = "bold"))
-
 
 ```
 

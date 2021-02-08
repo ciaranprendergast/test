@@ -14,29 +14,25 @@ knitr::opts_chunk$set(echo = FALSE)
 The **Intensive Care Units** in Ireland saw peak patient influx in late March - early April, and from late April, the daily percentage increase in ICU admissions has dropped substantially (note: percentages below 0% relate to days where validation of data led to a decrease in the reported overall number of cases admitted to ICU).
 <br><br><br><br>
 ```{r, include=TRUE, message=FALSE, warning=FALSE}
-rm(list=ls())
-data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
-
+library(tidyverse)
+library(RCurl)
+x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
+data1 <- read.csv(text = x)
 n <- nrow(data1)
-
-data1$Date <- as.character(data1$Date)
-data1$Date <- substr(data1$Date, 1, 10)
-data1$Date <- as.Date(data1$Date, "%Y/%m/%d")
-the.date <- data1$Date[n]
-
 
 #dervives column of new icu cases
 data1$newicu[1] <- NA
-if (n > 1) for(i in 2:n) data1$newicu[i] <- ( data1$RequiringICUCovidCases[i] - data1$RequiringICUCovidCases[i-1] )
+if (n > 1) for(i in 2:n) data1$newicu[i] <- ( data1$cases_icu[i] - data1$cases_icu[i-1] )
 
 #percentage of new cases
 data1$newicu_per[1] <- NA
-if (n > 1) for(i in 2:n) data1$newicu_per[i] <- ( 100*(data1$RequiringICUCovidCases[i] - data1$RequiringICUCovidCases[i-1])/data1$RequiringICUCovidCases[i-1] )
+if (n > 1) for(i in 2:n) data1$newicu_per[i] <- ( 100*(data1$cases_icu[i] - data1$cases_icu[i-1])/data1$cases_icu[i-1] )
 
 newicu <- as.numeric(data1$newicu)
 newicu_per <- as.numeric(data1$newicu_per)
-
-df <- data.frame(newicu_per,data1$Date,newicu)
+dates <- as.factor(data1$date)                   #this calls the dates
+dates1 <- as.Date(dates, format= "%d-%b")
+df <- data.frame(newicu_per,dates1,newicu)
 
 ylim.prim <- c(0, 80)   
 ylim.sec <- c(0, 50)
@@ -44,7 +40,7 @@ ylim.sec <- c(0, 50)
 b <- diff(ylim.prim)/diff(ylim.sec)
 a <- b*(ylim.prim[1] - ylim.sec[1])
 
-plot <- ggplot(df, aes(data1.Date)) +
+plot <- ggplot(df, aes(dates1)) +
   geom_col(aes(y= newicu_per, color ="red")) +
   geom_line(aes(y = a + newicu*b, color = "blue")) +
   scale_y_continuous("% Increase on Total", sec.axis = sec_axis(~ (. - a)/b, name = "Daily Admissions")) +
