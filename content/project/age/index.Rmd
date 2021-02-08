@@ -47,7 +47,7 @@ totalllcases <- as.numeric(data1$cases_cumul)
 age <- c("0-4","05-14","15-24","25-34","35-44","45-54","55-64","65-74", "75-84", "85+")
 
 
-cases <- as.numeric(c(data1$cases_under_5[which(data1$date == the.date )] - data1$cases_under_5[which(data1$date == the.date - 14)] ,
+cases <- as.numeric(c(data1$cases_under_5[which(data1$date == the.date )] - data1$cases_under_5[which(data1$date == the.date -14)] ,
                       data1$cases_5_14[which(data1$date == the.date )] - data1$cases_5_14[which(data1$date == the.date - 14 )],
                       data1$cases_15_24[which(data1$date == the.date )] - data1$cases_15_24[which(data1$date == the.date - 14 )],
                       data1$cases_25_34[which(data1$date == the.date )] - data1$cases_25_34[which(data1$date == the.date - 14 )],
