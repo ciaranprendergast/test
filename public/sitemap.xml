@@ -38,56 +38,11 @@
   </url>
   
   <url>
-    <loc>/publication-type/2/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/journal-article/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/covid-19/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/robert-ford/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/source-themes/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+    <loc>/project/5day.average/newtry/</loc>
   </url>
   
   <url>
     <loc>/tag/5-day-running-average-of-cases/</loc>
-  </url>
-  
-  <url>
-    <loc>/project/5day.average/</loc>
   </url>
   
   <url>
@@ -99,11 +54,11 @@
   </url>
   
   <url>
-    <loc>/project/age/</loc>
+    <loc>/project/age/age.hosp.2/</loc>
   </url>
   
   <url>
-    <loc>/project/counties/</loc>
+    <loc>/authors/</loc>
   </url>
   
   <url>
@@ -115,11 +70,11 @@
   </url>
   
   <url>
-    <loc>/post/covid-progression-through-time/covid-progression-over-time/</loc>
+    <loc>/project/counties/county/</loc>
   </url>
   
   <url>
-    <loc>/post/covid-related-hospitalisations/</loc>
+    <loc>/author/covid-19/</loc>
   </url>
   
   <url>
@@ -159,7 +114,19 @@
   </url>
   
   <url>
+    <loc>/publication_types/</loc>
+  </url>
+  
+  <url>
+    <loc>/publication/</loc>
+  </url>
+  
+  <url>
     <loc>/talk/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
   </url>
   
   <url>

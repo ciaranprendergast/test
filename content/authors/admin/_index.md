@@ -8,15 +8,6 @@ user_groups:
 - Researchers
 - Visitors
 ---
-```{r setup, include=FALSE, echo= False}
-library(RCurl)
-x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
-newcases <- read.csv(text = x, stringsAsFactors=FALSE)
 
-  n <- nrow(newcases)
-the.date <- newcases$date[n]
-
-```
-
-As the coronavirus pandemic has swept the world, the health agencies of many nations have gathered and released data on the progression of the disease and the toll it has taken. The Government of Ireland has produced the [COVID-19 Health Surveillance Monitor](https://www.gov.ie/en/publication/252d15-covid-19-coronavirus-data-for-ireland/) based on daily statistics reported by the Health Protection Surveillance Centre. As a supplement to the visualisations available on this dashboard, we've summed up some of the relevant data for Ireland in some simple graphs as of `r the.date`. We sourced our data from [gov.ie](https://www.gov.ie/en/campaigns/c36c85-covid-19-coronavirus/?referrer=/health-covid-19).
+As the coronavirus pandemic has swept the world, the health agencies of many nations have gathered and released data on the progression of the disease and the toll it has taken. The Government of Ireland has produced the [COVID-19 Health Surveillance Monitor](https://www.gov.ie/en/publication/252d15-covid-19-coronavirus-data-for-ireland/) based on daily statistics reported by the Health Protection Surveillance Centre. As a supplement to the visualisations available on this dashboard, we've summed up some of the relevant data for Ireland in some simple graphs. We sourced our data from [gov.ie](https://www.gov.ie/en/campaigns/c36c85-covid-19-coronavirus/?referrer=/health-covid-19).
 

@@ -189,37 +189,14 @@ Three
     </item>
     
     <item>
-      <title>An example journal article</title>
-      <link>/publication/journal-article/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>/publication/journal-article/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>5-day running average of Cases</title>
-      <link>/project/5day.average/</link>
+      <title>5 days running average</title>
+      <link>/project/5day.average/newtry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/5day.average/</guid>
+      <guid>/project/5day.average/newtry/</guid>
       <description>
 
 
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;The 5 day running average allows for a closer look at the current rate of infection and progress in the country. The red line shows how the 5 day running average of new cases per day has changed over the 14 days leading up to 2021-01-28. We have overlaid the trend over the two weeks previous to this, shown as the dashed blue line.&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/5day.average/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/project/5day.average/newtry_files/figure-html/pressure-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -245,39 +222,21 @@ Three
 
 &lt;div id=&#34;breakdown-of-ages-affected&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Breakdown of Ages Affected&lt;/h2&gt;
-&lt;p&gt;As we can see in the graph below, the most affected group has been the &lt;strong&gt;Over 75s&lt;/strong&gt;, while people aged in their early 20s or younger remain the least likely to have contracted the virus. The disproportionatly fewer young people being affected scews the mean somewhat; as we can see when it is adjusted to include only people 15 years old or older. Updated as of 8-Jan.&lt;/p&gt;
+&lt;p&gt;As we can see in the graph below, the most affected group has been the &lt;strong&gt;Over 65s&lt;/strong&gt;, while people aged in their early 20s or younger remain the least likely to have contracted the virus. The disproportionatly fewer young people being affected scews the mean somewhat; as we can see when it is adjusted to include only people 15 years old or older. Updated as of 2021-01-28.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Most-Affected-Age-Groups_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
     
     <item>
-      <title>Cases by Age over last 2 Weeks</title>
-      <link>/project/age/</link>
+      <title>age.hosp.2</title>
+      <link>/project/age/age.hosp.2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/age/</guid>
+      <guid>/project/age/age.hosp.2/</guid>
       <description>
 
 
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Below we show the breakdown by age of the infected over the last 2 weeks. The mean cases per million for the total population is shown as the yellow dashed line, as well as the mean excluding children (where incidence may be lower) as the green dashed line. Updated as of 2021-01-28.&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/age/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Cases by County last 2 Weeks</title>
-      <link>/project/counties/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/counties/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Breaking down the data to the level of cases per county over the last 2 weeks allows us to observe the current infection hotspots nationwide in a manner which is obscured when viewing the cumulative cases to date per county. Updated as of 30-Oct.&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/counties/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/project/age/age.hosp.2_files/figure-html/pressure-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -298,34 +257,14 @@ Three
     </item>
     
     <item>
-      <title>Covid-Progression-over-Time</title>
-      <link>/post/covid-progression-through-time/covid-progression-over-time/</link>
+      <title>county</title>
+      <link>/project/counties/county/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/post/covid-progression-through-time/covid-progression-over-time/</guid>
+      <guid>/project/counties/county/</guid>
       <description>
 
 
-&lt;div id=&#34;progression-of-the-virus&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Progression of the Virus&lt;/h2&gt;
-&lt;p&gt;As we can see here, the number of diagnosed Covid-19 cases in Ireland has grown exponentially, reaching &lt;strong&gt;140725&lt;/strong&gt; on 8-Jan. On the brightside, however, we can see that the rate of infection has fallen drastically; as the impact of &lt;em&gt;social distancing&lt;/em&gt; translates into each infected person infecting fewer and fewer other people.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Covid-Progression-through-Time/Covid-Progression-over-Time_files/figure-html/Covid%20Progression-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Covid-related Hospitalisations</title>
-      <link>/post/covid-related-hospitalisations/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/post/covid-related-hospitalisations/</guid>
-      <description>
-
-
-&lt;div id=&#34;trend-in-hospital-admissions&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Trend in Hospital Admissions&lt;/h2&gt;
-&lt;p&gt;Hospital admissions have fallen slowly after early peaks near April 1st. The percentage increase on total hospital admissions trended downwards throughout the crisis.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Covid-Related-Hospitalisations_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;/project/counties/county_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -374,9 +313,8 @@ Three
 
 &lt;div id=&#34;who-has-been-hospitalised&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Who has been hospitalised?&lt;/h2&gt;
-&lt;p&gt;As we can see, those hospitalised have been predominantly in those age groups aged &lt;strong&gt;65 years and over&lt;/strong&gt;, while younger age groups remain unlikely to be hospitalised if infected. Updated as of 8-Jan.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: Removed 1 rows containing missing values (position_stack).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Hopitalisation-by-Age-Group_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;As we can see, those hospitalised have been predominantly in those age groups aged &lt;strong&gt;65 years and over&lt;/strong&gt;, while younger age groups remain unlikely to be hospitalised if infected. Updated as of 2021-01-28.
+&lt;img src=&#34;/post/Hopitalisation-by-Age-Group_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;```&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -404,7 +342,7 @@ Three
 
 &lt;div id=&#34;counties-most-affected&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Counties most affected&lt;/h2&gt;
-&lt;p&gt;As we can see in the map, &lt;strong&gt;Dublin&lt;/strong&gt; and &lt;strong&gt;Cavan&lt;/strong&gt; have suffered the highest relative proportion of cases, followed by Monaghan, Westmeath, Kildare and Wicklow. As of 8-Jan , it is mainly counties of the west that have been least affected&lt;/p&gt;
+&lt;p&gt;As we can see in the map, &lt;strong&gt;Dublin&lt;/strong&gt; and &lt;strong&gt;Cavan&lt;/strong&gt; have suffered the highest relative proportion of cases, followed by Monaghan, Westmeath, Kildare and Wicklow. As of 2021-01-28 , it is mainly counties of the west that have been least affected&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Infection-Rate-by-County_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
