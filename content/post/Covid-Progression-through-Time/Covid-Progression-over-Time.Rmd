@@ -9,12 +9,14 @@ output: html_document
 ```{r setup, include=FALSE}
 rm(list=ls())
 knitr::opts_chunk$set(echo=FALSE)
-library(tidyverse)
-library(RCurl)
-x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
-data1 <- read.csv(text = x)
+data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
+
 n <- nrow(data1)
-the.date <- data1$date[n]
+
+data1$Date <- as.character(data1$Date)
+data1$Date <- substr(data1$Date, 1, 10)
+data1$Date <- as.Date(data1$Date, "%Y/%m/%d")
+the.date <- data1$Date[n]
 ```
  
 
@@ -25,36 +27,29 @@ As we can see here, the number of diagnosed Covid-19 cases in Ireland has grown 
 
 ```{r Covid Progression, include=TRUE, message=FALSE, warning=FALSE}
 
-library(tidyverse)
-library(RCurl)
-x <- getURL("https://raw.githubusercontent.com/frankmoriarty/covid_ie/master/doh_covid_ie_cases_analysis.csv")
-data1 <- read.csv(text = x)
-
-
+library(ggplot2)
+data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
 
 n <- nrow(data1)
 
-total_cases <- as.numeric(data1$cases_cumul)
+data1$Date <- as.character(data1$Date)
+data1$Date <- substr(data1$Date, 1, 10)
+data1$Date <- as.Date(data1$Date, "%Y/%m/%d")
+
+the.date <- data1$Date[n]
+
+total_cases <- as.numeric(data1$TotalConfirmedCovidCases)
 
 data1$newcases[1] <- NA
 if (n > 1) for(i in 2:n) data1$newcases[i] <- ( total_cases[i] - total_cases[i-1] )
-
 
 data1$newcases_per[1] <- NA
 if (n > 1) for(i in 2:n) data1$newcases_per[i] <- ( 100*(total_cases[i] - total_cases[i-1])/total_cases[i-1] )
 
 
+df <- data.frame(data1$newcases_per,data1$Date,total_cases)
 
 
-
-total1 <- c(1,1,1,2,6,13,18,19,21,24,34,43,70,90,129,169,data1$cases_cumul)  #this gives the total cases with the manually-typed numbers describing (constant) days not included in csv file
-
-increase2 <- c(NA,NA,NA,NA,NA,NA,NA,5.6,10.5,14.3,41.7,26.5,62.8,28.6,43.3,31,60.36,na.omit(data1$newcases_per))  #this gives us the vector for increase on total, the nas are included to ensure that that the line only starts on the 7th
-earlier.dates <- c("29-Feb", "1-Mar", "2-Mar", "3-Mar", "4-Mar", "5-Mar", "6-Mar", "7-Mar", "8-Mar", "9-Mar","10-Mar", "11-Mar", "12-Mar","13-Mar", "14-Mar", "15-Mar")
-dates<- c(earlier.dates,data1$date)
-dates0 <- as.factor(dates)                   #this calls the dates
-dates1 <- as.Date(dates0, format= "%d-%b") 
-df <- data.frame(increase2,dates1,total1)
 
 ylim.prim <- c(0, 60)   
 ylim.sec <- c(0, 18000)  
@@ -62,13 +57,12 @@ ylim.sec <- c(0, 18000)
 b <- diff(ylim.prim)/diff(ylim.sec)
 a <- b*(ylim.prim[1] - ylim.sec[1])
 
-plot <- ggplot(df, aes(dates1)) +
-  geom_col(aes(y = increase2, color="tomoto4")) +
-  geom_line(aes(y = a + total1*b, color="darkblue")) +
+plot <- ggplot(df, aes(data1.Date)) +
+  geom_col(aes(y = data1.newcases_per, color="tomoto4")) +
+  geom_line(aes(y = a + total_cases*b, color="darkblue")) +
   scale_y_continuous("% Increase on Total", sec.axis = sec_axis(~ (. - a)/b, name = "Total Cases")) +
   scale_x_date("Dates") +
   ggtitle("Progression of Covid-19 in Ireland") 
-
 
 
 plot2 <- plot + scale_color_discrete(name = "", labels = c("Total Cases", "% Increase on Total") )

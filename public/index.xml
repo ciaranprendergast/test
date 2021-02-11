@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Covid-19 Pandemic in Ireland</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0100</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 05 May 2019 00:00:00 +0100</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Covid-19 Pandemic in Ireland</title>
@@ -109,13 +109,13 @@ $$&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
-One
+One 
 &lt;/span&gt;
 &lt;span class=&#34;fragment &#34; &gt;
-&lt;strong&gt;Two&lt;/strong&gt;
+&lt;strong&gt;Two&lt;/strong&gt; 
 &lt;/span&gt;
 &lt;span class=&#34;fragment &#34; &gt;
-Three
+Three 
 &lt;/span&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
@@ -189,24 +189,6 @@ Three
     </item>
     
     <item>
-      <title>Privacy Policy</title>
-      <link>/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      <guid>/privacy/</guid>
-      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Terms</title>
-      <link>/terms/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      <guid>/terms/</guid>
-      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>An example journal article</title>
       <link>/publication/journal-article/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
@@ -235,9 +217,9 @@ Three
 
 
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;The 5 day running average allows for a closer look at the current rate of infection and progress in the country. The red line shows how the 5 day running average of new cases per day has changed over the 14 days leading up to 30-Oct. We have overlaid the trend over the two weeks previous to this, shown as the dashed blue line.&lt;/p&gt;
+&lt;p&gt;The 5 day running average allows for a closer look at the current rate of infection and progress in the country. The red line shows how the 5 day running average of new cases per day has changed over the 14 days leading up to 2021-02-10. We have overlaid the trend over the two weeks previous to this, shown as the dashed blue line.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/5day.average/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;staticunnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -263,7 +245,7 @@ Three
 
 &lt;div id=&#34;breakdown-of-ages-affected&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Breakdown of Ages Affected&lt;/h2&gt;
-&lt;p&gt;As we can see in the graph below, the most affected group has been the &lt;strong&gt;Over 75s&lt;/strong&gt;, while people aged in their early 20s or younger remain the least likely to have contracted the virus. The disproportionatly fewer young people being affected scews the mean somewhat; as we can see when it is adjusted to include only people 15 years old or older. Updated as of 30-Oct.&lt;/p&gt;
+&lt;p&gt;As we can see in the graph below, the most affected group has been the &lt;strong&gt;Over 75s&lt;/strong&gt;, while people aged in their early 20s or younger remain the least likely to have contracted the virus. The disproportionatly fewer young people being affected scews the mean somewhat; as we can see when it is adjusted to include only people 15 years old or older. Updated as of 2021-02-10.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Most-Affected-Age-Groups_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -278,9 +260,9 @@ Three
 
 
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Below we show the breakdown by age of the infected over the last 2 weeks. The mean cases per million for the total population is shown as the yellow dashed line, as well as the mean excluding children (where incidence may be lower) as the green dashed line. Updated as of 30-Oct.&lt;/p&gt;
+&lt;p&gt;Below we show the breakdown by age of the infected over the last 2 weeks. The mean cases per million for the total population is shown as the yellow dashed line, as well as the mean excluding children (where incidence may be lower) as the green dashed line. Updated as of 2021-02-10.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/age/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;staticunnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -293,9 +275,9 @@ Three
 
 
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Breaking down the data to the level of cases per county over the last 2 weeks allows us to observe the current infection hotspots nationwide in a manner which is obscured when viewing the cumulative cases to date per county. Updated as of 30-Oct.&lt;/p&gt;
+&lt;p&gt;Breaking down the data to the level of cases per county over the last 2 weeks allows us to observe the current infection hotspots nationwide in a manner which is obscured when viewing the cumulative cases to date per county. Updated as of 2021-02-08.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/counties/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;staticunnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -325,7 +307,7 @@ Three
 
 &lt;div id=&#34;progression-of-the-virus&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Progression of the Virus&lt;/h2&gt;
-&lt;p&gt;As we can see here, the number of diagnosed Covid-19 cases in Ireland has grown exponentially, reaching &lt;strong&gt;61450&lt;/strong&gt; on 30-Oct. On the brightside, however, we can see that the rate of infection has fallen drastically; as the impact of &lt;em&gt;social distancing&lt;/em&gt; translates into each infected person infecting fewer and fewer other people.&lt;/p&gt;
+&lt;p&gt;As we can see here, the number of diagnosed Covid-19 cases in Ireland has grown exponentially, reaching **** on 2021-02-10. On the brightside, however, we can see that the rate of infection has fallen drastically; as the impact of &lt;em&gt;social distancing&lt;/em&gt; translates into each infected person infecting fewer and fewer other people.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Covid-Progression-through-Time/Covid-Progression-over-Time_files/figure-html/Covid%20Progression-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -422,7 +404,7 @@ Three
 
 &lt;div id=&#34;counties-most-affected&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Counties most affected&lt;/h2&gt;
-&lt;p&gt;As we can see in the map, &lt;strong&gt;Dublin&lt;/strong&gt; and &lt;strong&gt;Cavan&lt;/strong&gt; have suffered the highest relative proportion of cases, followed by Monaghan, Westmeath, Kildare and Wicklow. As of 30-Oct , it is mainly counties of the west that have been least affected&lt;/p&gt;
+&lt;p&gt;As we can see in the map, &lt;strong&gt;Dublin&lt;/strong&gt; and &lt;strong&gt;Cavan&lt;/strong&gt; have suffered the highest relative proportion of cases, followed by Monaghan, Westmeath, Kildare and Wicklow. As of 2021-02-10 , it is mainly counties of the west that have been least affected&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Infection-Rate-by-County_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
