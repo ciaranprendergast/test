@@ -22,7 +22,7 @@ the.date <- data1$Date[n]
 
 ## Progression of the Virus
 
-As we can see here, the number of diagnosed Covid-19 cases in Ireland has grown exponentially, reaching **`r data1$cases_cumul[which(data1$date == the.date)]`** on `r the.date`. On the brightside, however, we can see that the rate of infection has fallen drastically; as the impact of *social distancing* translates into each infected person infecting fewer and fewer other people.
+As we can see here, the number of diagnosed Covid-19 cases in Ireland has grown exponentially, reaching **`r data1$TotalConfirmedCovidCases[which(data1$date == the.date)]`** on `r the.date`. On the brightside, however, we can see that the rate of infection has fallen drastically; as the impact of *social distancing* translates into each infected person infecting fewer and fewer other people.
 
 
 ```{r Covid Progression, include=TRUE, message=FALSE, warning=FALSE}
