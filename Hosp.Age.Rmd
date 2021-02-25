@@ -1,31 +1,21 @@
 ---
-title: "Hospitalisation by Age-Group"
-author: "Frank Moriarty and Ciaran Prendergast"
-date: "5/12/2020"
+title: "Hospitalisation/Age"
 output: html_document
 ---
 
-
-```{r setup, include=TRUE, echo = FALSE}
-rm(list=ls())
-knitr::opts_chunk$set(echo=FALSE)
-data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
-
-n <- nrow(data1)
-
-data1$Date <- as.character(data1$Date)
-data1$Date <- substr(data1$Date, 1, 10)
-data1$Date <- as.Date(data1$Date, "%Y/%m/%d")
-the.date <- data1$Date[n]
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
-## Who has been hospitalised?
 
-The red bars show the number of people hospitalised while the shade of red depicts hospitalisation status. Updated as of `r the.date`.
 
-```{r,include =TRUE, echo=FALSE, message=FALSE}
-library(ggplot2)
-library(tidyverse)
+
+
+#
+
+```{r pressure, echo=FALSE}
 rm(list=ls())
+
+library(ggplot2)
 data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
 
 n <- nrow(data1)
@@ -63,10 +53,5 @@ graph3 <-graph2 + theme(axis.title.y =  element_text(face="bold"), axis.title.x 
 graph3 +theme(axis.text=element_text(size=10, face = "bold"),
               axis.title=element_text(size=14,face="bold"), plot.title = element_text(size=16, face = "bold"))
 
-
-
 ```
-
-```
-
 

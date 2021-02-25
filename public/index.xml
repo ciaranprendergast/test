@@ -236,22 +236,6 @@ Three
     </item>
     
     <item>
-      <title>Age-Groups Most Affected</title>
-      <link>/post/most-affected-age-groups/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/post/most-affected-age-groups/</guid>
-      <description>
-
-
-&lt;div id=&#34;breakdown-of-ages-affected&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Breakdown of Ages Affected&lt;/h2&gt;
-&lt;p&gt;As we can see in the graph below, the most affected group has been the &lt;strong&gt;Over 75s&lt;/strong&gt;, while people aged in their early 20s or younger remain the least likely to have contracted the virus. The disproportionatly fewer young people being affected scews the mean somewhat; as we can see when it is adjusted to include only people 15 years old or older. Updated as of 2021-02-10.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Most-Affected-Age-Groups_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Cases by Age over last 2 Weeks</title>
       <link>/project/age/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -307,7 +291,7 @@ Three
 
 &lt;div id=&#34;progression-of-the-virus&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Progression of the Virus&lt;/h2&gt;
-&lt;p&gt;As we can see here, the number of diagnosed Covid-19 cases in Ireland has grown exponentially, reaching **** on 2021-02-10. On the brightside, however, we can see that the rate of infection has fallen drastically; as the impact of &lt;em&gt;social distancing&lt;/em&gt; translates into each infected person infecting fewer and fewer other people.&lt;/p&gt;
+&lt;p&gt;We see here the total confirmed cases in the republic, reaching &lt;strong&gt;212647&lt;/strong&gt; on 2021-02-18. The blue bars represent the percentage increase on total while the red line tracks total cases.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Covid-Progression-through-Time/Covid-Progression-over-Time_files/figure-html/Covid%20Progression-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -323,7 +307,7 @@ Three
 
 &lt;div id=&#34;trend-in-hospital-admissions&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Trend in Hospital Admissions&lt;/h2&gt;
-&lt;p&gt;Hospital admissions have fallen slowly after early peaks near April 1st. The percentage increase on total hospital admissions trended downwards throughout the crisis.&lt;/p&gt;
+&lt;p&gt;We see here the trend in hospitalisations on 2021-02-18. The blue bars represent the percentage increase on total while the red line tracks total hospitalisations.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Covid-Related-Hospitalisations_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -339,7 +323,7 @@ Three
 
 &lt;div id=&#34;covid-related-icu-admissions&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Covid-Related ICU Admissions&lt;/h2&gt;
-&lt;p&gt;The &lt;strong&gt;Intensive Care Units&lt;/strong&gt; in Ireland saw peak patient influx in late March - early April, and from late April, the daily percentage increase in ICU admissions has dropped substantially (note: percentages below 0% relate to days where validation of data led to a decrease in the reported overall number of cases admitted to ICU).
+&lt;p&gt;We see here the total &lt;strong&gt;Intensive Care Unit&lt;/strong&gt; admissions up to 2021-02-18. Total admissions currently stand at &lt;strong&gt;212647&lt;/strong&gt; . The blue bars represent the percentage increase on total while the red line tracks total admission. (note: percentages below 0% relate to days where validation of data led to a decrease in the reported overall number of cases admitted to ICU).
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;img src=&#34;/post/Covid-Related-ICU-Admissions_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -356,7 +340,7 @@ Three
 
 &lt;div id=&#34;evolution-of-the-mode-of-transmission&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Evolution of the Mode of Transmission&lt;/h2&gt;
-&lt;p&gt;As travel restricions came into place the primary mode of infection has moved away from travel to infected regions and it became far more common to catch the virus through close contact with an infected person, such as a family-member; or through &lt;a href=&#34;https://en.wikipedia.org/wiki/Transmission_(medicine)&#34;&gt;Community Transmission&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As travel restricions came into place the primary mode of infection has moved away from travel to infected regions and it became far more common to catch the virus through close contact with an infected person, such as a family-member; or through &lt;a href=&#34;https://en.wikipedia.org/wiki/Transmission_(medicine)&#34;&gt;Community Transmission&lt;/a&gt;. Updated as of 2021-02-18&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Evolution-of-the-Mode-of-Transmission_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;a href=&#34;#top&#34;&gt;Back to top&lt;/a&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -374,8 +358,7 @@ Three
 
 &lt;div id=&#34;who-has-been-hospitalised&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Who has been hospitalised?&lt;/h2&gt;
-&lt;p&gt;As we can see, those hospitalised have been predominantly in those age groups aged &lt;strong&gt;65 years and over&lt;/strong&gt;, while younger age groups remain unlikely to be hospitalised if infected. Updated as of 30-Oct.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: Removed 1 rows containing missing values (position_stack).&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The red bars show the number of people hospitalised while the shade of red depicts hospitalisation status. Updated as of 2021-02-25.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Hopitalisation-by-Age-Group_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;```&lt;/p&gt;
 &lt;/div&gt;
@@ -404,7 +387,7 @@ Three
 
 &lt;div id=&#34;counties-most-affected&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Counties most affected&lt;/h2&gt;
-&lt;p&gt;As we can see in the map, &lt;strong&gt;Dublin&lt;/strong&gt; and &lt;strong&gt;Cavan&lt;/strong&gt; have suffered the highest relative proportion of cases, followed by Monaghan, Westmeath, Kildare and Wicklow. As of 2021-02-10 , it is mainly counties of the west that have been least affected&lt;/p&gt;
+&lt;p&gt;The representation below uses the shade of the county to show the relative number of cases present with regards to the population. The darker the shade, the greater the prevalence. Updated as of 2021-02-25.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Infection-Rate-by-County_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>

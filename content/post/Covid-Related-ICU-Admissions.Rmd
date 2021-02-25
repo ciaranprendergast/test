@@ -6,12 +6,21 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
+
 knitr::opts_chunk$set(echo = FALSE)
+data1 <- read.csv("https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D")
+
+n <- nrow(data1)
+
+data1$Date <- as.character(data1$Date)
+data1$Date <- substr(data1$Date, 1, 10)
+data1$Date <- as.Date(data1$Date, "%Y/%m/%d")
+the.date <- data1$Date[n]
 ```
 
-## Covid-Related ICU Admissions
+## Covid-Related ICU Admissions##
 
-The **Intensive Care Units** in Ireland saw peak patient influx in late March - early April, and from late April, the daily percentage increase in ICU admissions has dropped substantially (note: percentages below 0% relate to days where validation of data led to a decrease in the reported overall number of cases admitted to ICU).
+We see here the total **Intensive Care Unit** admissions up to `r the.date`.  Total admissions currently stand at **`r data1$TotalConfirmedCovidCases[which(data1$Date == the.date)]`** . The blue bars represent the percentage increase on total while the red line tracks total admission. (note: percentages below 0% relate to days where validation of data led to a decrease in the reported overall number of cases admitted to ICU).
 <br><br><br><br>
 ```{r, include=TRUE, message=FALSE, warning=FALSE}
 library(ggplot2)

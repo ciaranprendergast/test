@@ -22,7 +22,7 @@ the.date <- data1$Date[n]
 
 ## Breakdown of Ages Affected
 
-As we can see in the graph below, the most affected group has been the **Over 75s**, while people aged in their early 20s or younger remain the least likely to have contracted the virus. The disproportionatly fewer young people being affected scews the mean somewhat; as we can see when it is adjusted to include only people 15 years old or older. Updated as of `r the.date`.
+The graph below shows the rate of cases per million of the population for each age-range. The yellow line represents the mean rate while green line represents the mean rate for citizens older than 15 years old. Updated as of `r the.date`.
 
 
 

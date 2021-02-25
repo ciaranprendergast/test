@@ -23,8 +23,7 @@ the.date <- data1$Date[n]
 ```
 
 ## Counties most affected
-
-As we can see in the map, **Dublin** and **Cavan** have suffered the highest relative proportion of cases, followed by Monaghan, Westmeath, Kildare and Wicklow. As of `r the.date` , it is mainly counties of the west that have been least affected
+The representation below uses the shade of the county to show the relative number of cases present with regards to the population. The darker the shade, the greater the prevalence. Updated as of `r the.date`.
 
 
 
