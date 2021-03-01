@@ -20,7 +20,7 @@ the.date <- data1$Date[n]
 ## Trend in Hospital Admissions
 
 
-We see here the trend in hospitalisations on `r the.date`. The blue bars represent the percentage increase on total while the red line tracks total hospitalisations.
+We see here the trend in hospitalisations on `r the.date`. The blue bars represent the percentage increase on total while the red line tracks daily hospitalisations.
 
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE}

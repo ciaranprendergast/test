@@ -22,7 +22,7 @@ the.date <- data1$Date[n]
 
 ## Progression of the Virus
 
-We see here the total confirmed cases in the republic, reaching **`r data1$TotalConfirmedCovidCases[which(data1$Date == the.date)]`** on `r the.date`. The blue bars represent the percentage increase on total while the red line tracks total cases.
+We see here the total confirmed cases in the republic, reaching **`r data1$TotalConfirmedCovidCases[which(data1$Date == the.date)]`** on `r the.date`. The blue bars represent the percentage increase on total for cases reported each day while the red line tracks total cases.
 
 
 ```{r Covid Progression, include=TRUE, message=FALSE, warning=FALSE}

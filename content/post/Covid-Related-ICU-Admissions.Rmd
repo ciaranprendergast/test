@@ -20,7 +20,7 @@ the.date <- data1$Date[n]
 
 ## Covid-Related ICU Admissions##
 
-We see here the total **Intensive Care Unit** admissions up to `r the.date`.  Total admissions currently stand at **`r data1$TotalConfirmedCovidCases[which(data1$Date == the.date)]`** . The blue bars represent the percentage increase on total while the red line tracks total admission. (note: percentages below 0% relate to days where validation of data led to a decrease in the reported overall number of cases admitted to ICU).
+We see here the total **Intensive Care Unit** admissions up to `r the.date`.  Total admissions currently stand at **`r data1$RequiringICUCovidCases[which(data1$Date == the.date)]`** . The blue bars represent the percentage increase on total while the red line tracks daily admissions. (note: percentages below 0% relate to days where validation of data led to a decrease in the reported overall number of cases admitted to ICU).
 <br><br><br><br>
 ```{r, include=TRUE, message=FALSE, warning=FALSE}
 library(ggplot2)

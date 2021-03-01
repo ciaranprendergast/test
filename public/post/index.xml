@@ -22,7 +22,7 @@
 
 &lt;div id=&#34;breakdown-of-ages-affected&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Breakdown of Ages Affected&lt;/h2&gt;
-&lt;p&gt;The graph below shows the rate of cases per million of the population for each age-range. The yellow line represents the mean rate while green line represents the mean rate for citizens older than 15 years old. Updated as of 2021-02-25.&lt;/p&gt;
+&lt;p&gt;The graph below shows the rate of cases per million of the population for each age-range. The yellow line represents the mean rate while green line represents the mean rate for citizens older than 15 years old. Updated as of 2021-02-28.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Most-Affected-Age-Groups_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -38,7 +38,7 @@
 
 &lt;div id=&#34;progression-of-the-virus&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Progression of the Virus&lt;/h2&gt;
-&lt;p&gt;We see here the total confirmed cases in the republic, reaching &lt;strong&gt;217478&lt;/strong&gt; on 2021-02-25. The blue bars represent the percentage increase on total while the red line tracks total cases.&lt;/p&gt;
+&lt;p&gt;We see here the total confirmed cases in the republic, reaching &lt;strong&gt;219592&lt;/strong&gt; on 2021-02-28. The blue bars represent the percentage increase on total for cases reported each day while the red line tracks total cases.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Covid-Progression-through-Time/Covid-Progression-over-Time_files/figure-html/Covid%20Progression-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -54,7 +54,7 @@
 
 &lt;div id=&#34;trend-in-hospital-admissions&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Trend in Hospital Admissions&lt;/h2&gt;
-&lt;p&gt;We see here the trend in hospitalisations on 2021-02-25. The blue bars represent the percentage increase on total while the red line tracks total hospitalisations.&lt;/p&gt;
+&lt;p&gt;We see here the trend in hospitalisations on 2021-02-28. The blue bars represent the percentage increase on total while the red line tracks daily hospitalisations.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Covid-Related-Hospitalisations_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -70,7 +70,7 @@
 
 &lt;div id=&#34;covid-related-icu-admissions&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Covid-Related ICU Admissions&lt;/h2&gt;
-&lt;p&gt;We see here the total &lt;strong&gt;Intensive Care Unit&lt;/strong&gt; admissions up to 2021-02-25. Total admissions currently stand at &lt;strong&gt;217478&lt;/strong&gt; . The blue bars represent the percentage increase on total while the red line tracks total admission. (note: percentages below 0% relate to days where validation of data led to a decrease in the reported overall number of cases admitted to ICU).
+&lt;p&gt;We see here the total &lt;strong&gt;Intensive Care Unit&lt;/strong&gt; admissions up to 2021-02-28. Total admissions currently stand at &lt;strong&gt;1297&lt;/strong&gt; . The blue bars represent the percentage increase on total while the red line tracks daily admissions. (note: percentages below 0% relate to days where validation of data led to a decrease in the reported overall number of cases admitted to ICU).
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;img src=&#34;/post/Covid-Related-ICU-Admissions_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -87,7 +87,7 @@
 
 &lt;div id=&#34;evolution-of-the-mode-of-transmission&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Evolution of the Mode of Transmission&lt;/h2&gt;
-&lt;p&gt;As travel restricions came into place the primary mode of infection has moved away from travel to infected regions and it became far more common to catch the virus through close contact with an infected person, such as a family-member; or through &lt;a href=&#34;https://en.wikipedia.org/wiki/Transmission_(medicine)&#34;&gt;Community Transmission&lt;/a&gt;. Updated as of 2021-02-25&lt;/p&gt;
+&lt;p&gt;As travel restricions came into place the primary mode of infection has moved away from travel to infected regions and it became far more common to catch the virus through close contact with an infected person, such as a family-member; or through &lt;a href=&#34;https://en.wikipedia.org/wiki/Transmission_(medicine)&#34;&gt;Community Transmission&lt;/a&gt;. Updated as of 2021-02-28&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Evolution-of-the-Mode-of-Transmission_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;a href=&#34;#top&#34;&gt;Back to top&lt;/a&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -105,7 +105,7 @@
 
 &lt;div id=&#34;who-has-been-hospitalised&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Who has been hospitalised?&lt;/h2&gt;
-&lt;p&gt;The red bars show the number of people hospitalised while the shade of red depicts hospitalisation status. Updated as of 2021-02-25.&lt;/p&gt;
+&lt;p&gt;The red bars show the number of people hospitalised while the shade of red depicts hospitalisation status. Updated as of 2021-02-28.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Hopitalisation-by-Age-Group_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;```&lt;/p&gt;
 &lt;/div&gt;
@@ -122,7 +122,7 @@
 
 &lt;div id=&#34;counties-most-affected&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Counties most affected&lt;/h2&gt;
-&lt;p&gt;The representation below uses the shade of the county to show the relative number of cases present with regards to the population. The darker the shade, the greater the prevalence. Updated as of 2021-02-25.&lt;/p&gt;
+&lt;p&gt;The representation below uses the shade of the county to show the relative number of cases present with regards to the population. The darker the shade, the greater the incidence. Updated as of 2021-02-28.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/Infection-Rate-by-County_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
