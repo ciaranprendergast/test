@@ -22,10 +22,12 @@ the.date <- data1$Date[n]
 
 ```
 
-As the coronavirus pandemic has swept the world, the health agencies of many nations have gathered and released data on the progression of the disease and the toll it has taken. The Government of Ireland has produced the [COVID-19 Health Surveillance Monitor](https://www.gov.ie/en/publication/252d15-covid-19-coronavirus-data-for-ireland/) based on daily statistics reported by the Health Protection Surveillance Centre. As a supplement to the visualisations available on this dashboard, we've summed up some of the relevant data for Ireland in some simple graphs as of `r the.date`. We sourced our data from [gov.ie](https://www.gov.ie/en/campaigns/c36c85-covid-19-coronavirus/?referrer=/health-covid-19). 
+As the coronavirus pandemic has swept the world, the health agencies of many nations have gathered and released data on the progression of the disease and the toll it has taken. The Government of Ireland has produced the [COVID-19 Health Surveillance Monitor](https://www.gov.ie/en/publication/252d15-covid-19-coronavirus-data-for-ireland/) based on daily statistics reported by the Health Protection Surveillance Centre. As a supplement to the visualisations available on this dashboard, we've summed up some of the relevant data for Ireland in some simple graphs as of `r the.date`. We sourced our data from [data.gov.ie ](https://www.gov.ie/en/campaigns/c36c85-covid-19-coronavirus/?referrer=/health-covid-19). 
 
 
 *Work by Ciaran Prendergast and Frank Moriarty*
 
 **Royal College of Surgeons Ireland**
+
+*(CP is funded by the Health Research Board through grant ILP-HSR-2019-006)*
 
